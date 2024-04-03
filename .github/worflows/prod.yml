@@ -25,13 +25,13 @@ jobs:
             - name: Push Image Docker
               run: docker push josemargama/node-crud
 
-#    deploy: 
-#        needs: build
-#        runs-on: self-hosted
-#        steps:
-#            - name : Remove Old Image
-#              run : docker stop java-crud && docker rm java-crud
-#            - name : Pull Image from Docker Hub
-#              run: docker pull josemargama/java-crud
-#            - name: Run Docker Container
-#              run: docker run -d -p 8085:8085 -e DB_URL=${{secrets.DB_URL}} -e DB_USER=${{secrets.DB_USER}} -e DB_PASS='${{secrets.DB_PASS}}' --name java-crud josemargama/java-crud
+    deploy: 
+        needs: build
+        runs-on: self-hosted
+        steps:
+            - name : Remove Old Image
+              run : docker stop java-crud && docker rm java-crud
+            - name : Pull Image from Docker Hub
+              run: docker pull josemargama/java-crud
+            - name: Run Docker Container
+              run: docker run -d -p 8085:8085 -e DB_URL=${{secrets.DB_URL}} -e DB_USER=${{secrets.DB_USER}} -e DB_PASS='${{secrets.DB_PASS}}' --name java-crud josemargama/java-crud
