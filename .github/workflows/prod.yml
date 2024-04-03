@@ -15,7 +15,7 @@ jobs:
             - name: Setup Node
               uses: actions/setup-node@v4
               with: 
-                node-version: '20'
+                node-version: '19'
             - name: Install Dependencies
               run: npm install 
             - name: Login Docker Hub
@@ -29,8 +29,8 @@ jobs:
         needs: build
         runs-on: self-hosted
         steps:
-#            - name : Remove Old Image
-#              run : docker stop node-crud && docker rm node-crud
+            - name : Remove Old Image
+              run : docker stop node-crud && docker rm node-crud
             - name : Pull Image from Docker Hub
               run: docker pull josemargama/node-crud
             - name: Run Docker Container
