@@ -1,9 +1,9 @@
 FROM node:20-alpine
-RUN mkdir -p /opt/app
-WORKDIR /opt/app
-COPY src/package.json package.json
-COPY src/package-lock.json package-lock.json 
+RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
+WORKDIR /home/node/app
+COPY package*.json ./
+USER node
 RUN npm install
-COPY src/ .
-EXPOSE 3333
-CMD [ "npm", "run", "dev"]
+COPY --chown=node:node . .
+EXPOSE 8080
+CMD [ "npm", "run", "dev" ]
