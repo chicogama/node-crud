@@ -1,0 +1,40 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "10.25.1.173",
+            "port": 2222,
+            "askForPassword": true,
+            "driver": "PostgreSQL",
+            "name": "psql",
+            "group": "psql",
+            "database": "beecrowd",
+            "username": "chicogama"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "10.25.1.173",
+            "port": 2221,
+            "driver": "MySQL",
+            "name": "EleicoesTutelares",
+            "group": "mysql",
+            "database": "eleicaotutelar",
+            "username": "root",
+            "askForPassword": true
+        },
+        {
+            "previewLimit": 50,
+            "server": "34.95.211.236",
+            "port": 2222,
+            "driver": "PostgreSQL",
+            "name": "zeroapp",
+            "group": "psql",
+            "database": "zeroapp",
+            "username": "chicogama"
+        }
+    ]
+}
