@@ -34,4 +34,4 @@ jobs:
             - name : Pull Image from Docker Hub
               run: docker pull josemargama/node-crud
             - name: Run Docker Container
-              run: docker run -d -p 3333:3333 -e PGHOST=${{secrets.PGHOST}} -e PGDATABASE=${{secrets.PGDATABASE}} -e PGPUSER='${{secrets.PGUSER}} -e PGDPASSWORD=${{secrets.PGPASSWORD}}' --name node-crud josemargama/node-crud
+              run: docker run -d -p 3333:3333 -e PGUSER=${{secrets.PGUSER}} -e PGPASSWORD=${{secrets.PGPASSWORD}} -e PGHOST='${{secrets.PGHOST}} -e PGDATABASE=${{secrets.PGDATABASE}}' --name node-crud josemargama/node-crud
